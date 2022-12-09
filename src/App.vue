@@ -1,8 +1,14 @@
 <template>
   <v-app>
-    <v-app-bar app>
+    <v-app-bar app height="90">
       <router-link to="/" class="text-decoration-none">
-        <v-toolbar-title class="d-flex justify-center">TERMOS</v-toolbar-title>
+        <v-toolbar-title class="d-flex justify-center">
+          <v-img
+            :src="`${publicPath}images/logo.png`"
+            max-height="auto"
+          >
+          </v-img>
+        </v-toolbar-title>
       </router-link>
     </v-app-bar>
 
@@ -26,7 +32,7 @@ export default {
   name: "App",
 
   data: () => ({
-    //
+    publicPath: process.env.BASE_URL,
   }),
 };
 </script>

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <v-row  class="d-flex justify-center align-center">
+    <v-row class="d-flex justify-center align-center">
       <v-col sm="12" md="4">
-        <Termo></Termo>
+        <Termo :termo="termo"></Termo>
       </v-col>
       <v-col sm="12" md="4" class="pa-10">
         <v-row class="pt-10">
@@ -37,7 +37,13 @@ export default {
   data() {
     return {
       pay: false,
+      termo: {},
     };
+  },
+  mounted() {
+   this.termo = this.$root.$data.termos.find(
+      (t) => t.id == this.$route.params.id
+    );
   },
   methods: {
     simulation() {
